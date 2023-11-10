@@ -1,0 +1,21 @@
+body {
+  color: #4f42b5;
+  background-color: #00c5ff;
+  text-align: center;
+}
+
+figure {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  border: solid white;
+  background-color: white;
+}
+
+figcaption {
+  display: none;
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+.languages {
+  margin: auto;
+  width: 25%;
+  border: inset;
+  padding: 10px;
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background-color: #E6E6FA;
+}
+
+body {
+  background-color:  #E6E6FA;
+}
+
+h1 {
+  text-align: center;
+}
+

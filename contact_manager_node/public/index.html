@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/handlebars.js"></script>
+  <script type='text/javascript' src='javascripts/app.js'></script>
+  <link rel="stylesheet" href="stylesheets/contacts.css">
+</head>
+<body>
+  <h1>Contact Manager</h1>
+  <div id='mainPage'>
+    <div class='topNav'>
+      <button id='addContact'>Add Contact</button>
+      <button id='addTag'>Add Tag</button>
+      <input id='search' type='text' placeholder='Search'>
+    </div>
+    <div id='tagLinksSpot'></div>
+    <div id='contactSpot' class='contacts'>
+    </div>
+  </div>
+  <div id='tagPage' class='page'>
+    <form id='tagForm'>
+      <input  type='text' placeholder = 'New Tag' name='tag'>
+      <button class='back' id='tagBack'>Back</button>
+      <button class='submit' type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id='newContPage' class='page'>
+    <form id='newContForm'>
+      <label for="name">Full Name:</label>
+      <input type='text' placeholder = 'Name' name='name'>
+
+      <label for="email">Email Address:</label>
+      <input type='email' placeholder = 'Email' name='email'>
+
+      <label for="tel">Telephone Number:</label>
+      <input type='tel' placeholder = 'Phone #' name='tel'>
+
+      <div id=tagSpot>
+
+      </div>
+
+      <button class='back' id='newContBack'>Back</button>
+      <button class='submit' type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id='editContPage' class='page'>
+    <form id='editContForm'>
+
+    </form>
+  </div>
+
+  <footer>
+    <p>Created by VST, 2023</p>
+  </footer>
+  <script id='tagTemplate' type='text/x-handlebars'>
+    <fieldset>
+        <legend>Select a tag:</legend>
+        {{#each tagName}}
+        {{> tagPartial tag=.}}
+        {{/each}}
+    </fieldset>
+  </script>
+  <script id='tagPartial' type='text/x-handlebars'>
+    <div>
+      <input class='checkbox' type="checkbox" id={{tag}} name="tag" value={{tag}} />
+      <label for={{tag}}>{{tag}}</label>
+    </div>
+  </script>
+  <script id='contactTemplate' type='text/x-handlebars'>
+    <h2>Contacts</h2>
+    {{#each contact}}
+    {{>contactPartial this}}
+    {{/each}}
+  </script>
+  <script id='contactPartial' type='text/x-handlebars'>
+    <div class='contact'>
+      <h3>{{this.full_name}}</h3>
+      <p><strong>Email: </strong>{{this.email}}</p>
+      <p><strong>Phone: </strong>{{this.phone_number}}</p>
+      <button class='contactEdit' id='edit{{this.id}}'>Edit</button>
+      <button class='contactDelete' id='delete{{this.id}}' type="submit">Delete</button>
+    </div>
+  </script>
+
+  <script id='editTemplate' type='text/x-handlebars'>
+    <label for="name">Full Name:</label>
+      <input type='text' placeholder = 'Name' name='name' value="{{full_name}}">
+
+      <label for="email">Email Address:</label>
+      <input type='email' placeholder = 'Email' name='email' value={{email}}>
+
+      <label for="tel">Telephone Number:</label>
+      <input type='tel' placeholder = 'Phone #' name='tel' value={{phone_number}}>
+
+      <div id=editTagSpot>
+        <fieldset>
+          <legend>Select a tag:</legend>
+          {{#each checkedTags}}
+            {{#if this.checked}}
+            {{> checkedTagPartial tag=this.name}}
+            {{else}}
+            {{> uncheckedTagPartial tag=this.name}}
+            {{/if}}
+          {{/each}}
+        </fieldset>
+      </div>
+
+      <button class='back' type='back' id='editContBack'>Back</button>
+      <button class='submit' type="submit" id="submit{{id}}">Submit</button>
+  </script>
+  <script id='checkedTagPartial' type='text/x-handlebars'>
+    <div>
+      <input class='checkbox' type="checkbox" id={{tag}} name="tag" value={{tag}} checked/>
+      <label for={{tag}}>{{tag}}</label>
+    </div>
+  </script>
+  <script id='uncheckedTagPartial' type='text/x-handlebars'>
+    <div>
+      <input class='checkbox' type="checkbox" id={{tag}} name="tag" value={{tag}}/>
+      <label for={{tag}}>{{tag}}</label>
+    </div>
+  </script>
+  <script id='tagLinksTemplate' type='text/x-handlebars'>
+    <h3>View By Tag:</h3>
+    {{#each tagName}}
+    {{> tagLinksPartial tag=.}}
+    {{/each}}
+  </script>
+  <script id='tagLinksPartial' type='text/x-handlebars'>
+    <a href='#' class='tagLink'>{{tag}}</a>
+  </script>
+</body>
+</html>

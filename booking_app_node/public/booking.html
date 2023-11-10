@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Schedules</title>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='exercises/booking.js'></script>
+  </head>
+  <body>
+    <h1>Schedules</h1>
+    <form action="/api/schedules" method="post" class="book-schedule">
+    <div class="book-schedule">
+      <label for="slot">Please select an open time slot: </label>
+      <select name="slot" id="slot">
+
+      </select>
+    </div>
+    <div class="book-schedule">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" />
+    </div>
+    <div id="submit">
+      <input type="submit" value="Submit" />
+    </div>
+    </form>
+  </body>
+</html>

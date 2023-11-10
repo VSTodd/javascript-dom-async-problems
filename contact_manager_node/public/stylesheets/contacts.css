@@ -1,0 +1,27 @@
+#mainPage {
+  display: block;
+}
+
+#tagPage {
+  display: none;
+}
+
+#newContPage {
+  display: none;
+}
+
+#editContPage {
+  display: none;
+}
+
+input {
+  display: block;
+}
+
+.checkbox {
+  display: inline;
+}
+
+.contact{
+  display: inline;
+}

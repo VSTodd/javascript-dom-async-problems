@@ -1,0 +1,19 @@
+#no {
+  color: green;
+}
+
+button {
+  color: red;
+}
+
+ul {
+  width: 20%;
+}
+
+li {
+  list-style-type: none;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #8FBC8F;
+}

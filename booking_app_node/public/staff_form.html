@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adding Staff</title>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='exercises/staff_form.js'></script>
+  </head>
+  <body>
+    <form action="/api/staff_members" method="post" class="add-staff">
+      <div class="add-staff">
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div class="add-staff">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="add-staff">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

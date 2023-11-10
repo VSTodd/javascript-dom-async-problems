@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Schedule</title>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='exercises/add_sched.js'></script>
+  </head>
+  <body>
+    <button id="more" type="button">Add more schedules</button>
+    <form action="/api/schedules" method="post" class="add-schedule">
+      <div class="add-schedule">
+        <label for="name">Staff Name: </label>
+        <select name="name" id="name">
+
+        </select>
+      </div>
+      <div class="add-schedule">
+        <label for="date">Date: </label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <div class="add-schedule">
+        <label for="time">Time </label>
+        <input type="time" name="time" id="time" />
+      </div>
+    </form>
+    <div id="submit">
+        <input type="submit" value="Submit" />
+    </div>
+  </body>
+</html>
